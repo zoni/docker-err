@@ -14,3 +14,5 @@ RUN /provision.sh && rm /provision.sh
 
 COPY scripts/start.sh /bin/start.sh
 ENTRYPOINT ["/bin/start.sh"]
+
+VOLUME ["/err/data/"]
