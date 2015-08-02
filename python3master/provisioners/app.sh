@@ -19,4 +19,17 @@ if [[ $ERR_PYTHON_VERSION == "2" ]]; then
 else
 	runas err python3 -m venv /err/virtualenv
 fi
+
+# Install Err itself
 runas err /err/virtualenv/bin/pip install $ERR_PACKAGE
+# XMPP back-end dependencies
+runas err /err/virtualenv/bin/pip install sleekxmpp pyasn1 pyasn1-modules
+# IRC back-end dependencies
+runas err /err/virtualenv/bin/pip install irc
+# HypChat back-end dependencies
+runas err /err/virtualenv/bin/pip install hypchat
+# Slack back-end dependencies. Note: Installing from master because PyPI
+# release is broken at this time.
+runas err /err/virtualenv/bin/pip install https://github.com/slackhq/python-slackclient/archive/master.zip
+# Telegram back-end dependencies
+runas err /err/virtualenv/bin/pip install python-telegram-bot
