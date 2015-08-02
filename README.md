@@ -46,3 +46,10 @@ Container layout
 * `/err/.ssh/`: The `.ssh` directory of the bot user (you can mount private SSH keys into this directory if you need to install plugins from private repositories).
 * `/err/virtualenv/`: The virtualenv containing the Python interpreter and installed packages.
 * `/err/data/`: A volume intended to store bot data (`BOT_DATA_DIR` setting of `config.py`).
+
+
+Security notes
+--------------
+
+* The bot is run under its own user account (*err*), not as root.
+* SSH is set up to automatically add unknown host keys (*StrictHostKeyChecking no*).

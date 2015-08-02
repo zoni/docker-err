@@ -34,5 +34,9 @@ $APTINSTALL $PYTHON_PACKAGES build-essential libssl-dev libffi-dev
 $APTINSTALL ca-certificates sudo curl vim-tiny git openssh-client
 ln -s /usr/bin/vi /usr/bin/vim
 
+# Automatically add unknown host keys, users have no way to answer yes
+# when using 'ask'.
+echo '    StrictHostKeyChecking no' >> /etc/ssh/ssh_config
+
 apt-get autoremove
 rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*.deb
