@@ -30,7 +30,8 @@ $APTINSTALL $PYTHON_PACKAGES build-essential libssl-dev libffi-dev
 
 # TLS certs and sudo are needed, curl and vim are tremendously useful when entering
 # a container for debugging (while barely increasing image size)
-$APTINSTALL ca-certificates sudo curl vim-tiny
+# Git is needed to install nearly all plugins
+$APTINSTALL ca-certificates sudo curl vim-tiny git
 ln -s /usr/bin/vi /usr/bin/vim
 
 apt-get autoremove
